@@ -61,9 +61,6 @@ Regular Income: Ensuring consistent earnings.
 * Missing Data that could have been useful:
 Amount of loan it was asked: This would have been highly relevant.
 
-Biggest trouble on the dataset:   
-
-The same customer can make multiple requests, and each request may contain missing values. The approach we took was using mode imputation per customer so missing data can handled with proper knowledge of the user requests and not with assumptions.
 --- 
 ## Data Preprocessing
 We first identify our data and consider our business rules (relevant data to determine if someone receives a credit). By default name, SSN, Customer ID, ID  features are discarded as IDs commonly contribute no relevant information.
