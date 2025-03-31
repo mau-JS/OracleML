@@ -110,7 +110,7 @@ We use a p value of 0.05 as threshold, we will remove the following columns for 
 * Because 'Bad', 'Standard', and 'Good' are relevant in the given order we Will also use OrdinalEncoder.
 * After the previous preprocessing, training still keeps a really low amount of NaN values. As such, we chose te drop them as the amount of them is incredibly low.
 * The data has vastly different scales and units. As such, we need to apply an scaler to the data. We chose to use Standard Scaler.
-
+---
 ## Model Training
 This is a classification model, as such we will use appropiate models compatible with the data:
 ### Logistic Regression
@@ -145,7 +145,15 @@ Cross Validation Score
 
 Confusion Matrix  
 ![Confusion Random Forest Matrix](./images/rf_matrix.png "Confusion Random Forest Matrix") 
+---
+Why metrics are so high on Random Forest?
+**Simplicity of Target Rules**: Since the target is calculated using straightforward comparisons and basic math, Decision Trees, which excel at rule-based decision-making, may already be more than sufficient. Random Forest, being an ensemble of multiple Decision Trees, adds unnecessary complexity for such a simple task, potentially leading to inflated metrics.
 
+What improvements can be done?
+*Include pipelines for scalers and model building. 
+*Apply regularization to reduce overfitting. 
+* Include decision tres and see the results, compare them with random forest. 
+* Include GridSearch or RandomSearch to test hyperparameters 
 ## Installation
 You can run this machine learning models in two ways, via cloud or locally in your environment.
 
