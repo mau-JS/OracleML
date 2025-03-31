@@ -118,12 +118,24 @@ This is a classification model, as such we will use appropiate models compatible
 **Logistic Regression Performance**
 ![Logistic Performance](./images/logistic_performance.png "Logistic Performance")
 
-Cross Validation Score
-![Logistic Cross Validation](./images/cross_logistic.png "Logistic Cross Validation")
+Cross Validation Score  
+![Logistic Cross Validation](./images/cross_logistic.png "Logistic Cross Validation")  
 
-Confusion Matrix
-![Confusion Logistic Matrix](./images/logistic_matrix.png "Confusion Logistic Matrix")
+Confusion Matrix  
+![Confusion Logistic Matrix](./images/logistic_matrix.png "Confusion Logistic Matrix")  
 
+### K-Neighbors  
+**Hyperparameters**: n_neighbors = 3  
+**K-NN Performance**  
+![K-NN Performance](./images/k_nn_performance.png "K-NN Performance")  
+
+Cross Validation Score  
+![KNN Cross Validation](./images/cross_knn.png "KNN Cross Validation")  
+
+Confusion Matrix  
+![Confusion KNN Matrix](./images/knn_matrix.png "Confusion KNN Matrix") 
+
+### Random Forest
 
 
 ## Installation
