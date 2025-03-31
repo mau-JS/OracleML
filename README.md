@@ -58,10 +58,10 @@ Regular Income: Ensuring consistent earnings.
 * Name: Names of individuals will not be relevant in the model; other attributes are sufficient to determine credit eligibility.
 * Interest Rate: Although relevant, this does not directly determine credit approval.
 * Month: The month of the credit request will be factored in.
-Missing Data that could have been useful:
+* Missing Data that could have been useful:
 Amount of loan it was asked: This would have been highly relevant.
 
-Biggest trouble on the dataset:
+#### Biggest trouble on the dataset:
 The same customer can make multiple requests, and each request may contain missing values. The approach we took was using mode imputation per customer so missing data can handled with proper knowledge of the user requests and not with assumptions.
 --- 
 ## Data Preprocessing
@@ -77,6 +77,7 @@ Tasks Done:
 * Replace Negative values in Number of Loans with NaN.
 * Remove non numeric characters in 'Delay from due Date' feature.
 * Convert 'Age' to numeric type.
+* Replaced underscores in Credit Mix with NaN.
 * Remove non numeric characters from 'Monthly Balance'.
 * Mode imputation per Customer for all missing data (sometimes data already in possesion was missing on other requests).
 * Removed 'Annual Income' outliers using IQR.
@@ -93,9 +94,30 @@ Correlation Matrix on numeric data to find linear trends in data:
 
 ![Correlation Matrix](./images/correlation_matrix.png "Correlation Matrix")
 
+Chi-Square Test on categorical data.
+After running this command Streamlit visual interface will open on browser and you can start making predictions. 
 
+![Chi-Square Test](./images/chi_square_test.png "Chi-Square Test")
 
+We use a p value of 0.05 as threshold, we will remove the following columns for our machine learning algorithms to reduce complexity:
+* Type of Loan
+* Payment of Min Amount
+* Payment Behaviour
 ---
+## Feature Engineering
+### Encoding
+* To keep consistency, we need to encode categorical data into numerical. Because months do have some order weight in how one comes and specific month, we Will use OrdinalEncoder for them.
+* Because 'Bad', 'Standard', and 'Good' are relevant in the given order we Will also use OrdinalEncoder.
+* After the previous preprocessing, training still keeps a really low amount of NaN values. As such, we chose te drop them as the amount of them is incredibly low.
+* The data has vastly different scales and units. As such, we need to apply an scaler to the data. We chose to use Standard Scaler.
+
+## Model Training
+This is a classification model, as such we will use appropiate models compatible with them:
+### Logistic Regression
+**Hyperparameters**: 100 máximum iterations.
+**Logistic Regression Performance**
+![](./images/logistic_performance.png")
+
 ## Installation
 You can run this machine learning models in two ways, via cloud or locally in your environment.
 
@@ -112,11 +134,12 @@ To run the Project locally, follow the steps below:
    ```
 2. Installing required dependencies:
   ```bash
-    pip install -r requirements.txt
+   pip install -r requirements.txt
   ```
 3. Running Streamlit application, open console and go again to OracleML folder:
    ```bash
    streamlit run app.py
    ```
-   After running this command Streamlit visual interface will open on browser and you can start making predictions.
+
+
 
