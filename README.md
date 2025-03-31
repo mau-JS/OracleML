@@ -150,7 +150,7 @@ Why metrics are so high on Random Forest?
 What improvements can be done?
 *Include pipelines for scalers and model building. 
 *Apply regularization to reduce overfitting. 
-* Include decision tres and see the results, compare them with random forest. 
+* Include decision trees and see the results, compare them with random forest. 
 * Include GridSearch or RandomSearch to test hyperparameters 
 ## Installation
 You can run this machine learning models in two ways, via cloud or locally in your environment.
