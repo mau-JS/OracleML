@@ -17,6 +17,85 @@ This project uses a dataset of 50,000 rows containing client dummy data to predi
 - **Credit History Age**: The duration (in years) of the client’s active credit history.
 - **Monthly Balance**: The client’s average monthly balance, which is closely tied to their Annual Income.
 
+## Data Exploration
+As always, we need to first understand our objectives and our data. This not only involves technical knowledge but also business knowledge. The dataset originally was composed by the following features:
+#### Categorical
+* <span style="color:red">ID</span>
+* <span style="color:red">Customer_ID</span>
+* Month (Can be converted to number or kept like this)
+* <span style="color:red">Name</span>
+* <span style="color:red">SSN</span>
+* Occupation
+* Type of Loan
+* Credit mix
+* Payment behaviour
+* Payment_of_min_amount
+
+
+### Discrete
+* Age
+* Num_Bank_Accounts
+* Interest Rate (Interest rate of loan)
+* Num of Loan
+* Delay_from_due_date
+* Num_of_delayed_payment
+* Num_Credit_Card
+	
+### Continous
+* Annual_Income
+* Monthly_Inhand Salary
+* Monthly_Balance
+* Credit history age
+
+This dataset originally lacked target labels, which meant we had to establish our own rules to determine who would qualify for credit. The following criteria was considered:
+Regular Income: Ensuring consistent earnings.
+* Enough payment capacity.
+* Adequate Payment Capacity: Ability to meet financial obligations.
+* Debt Capacity: Calculated as (Monthly Income - Fixed Expenses) × 0.40.
+* Number of Bank Accounts: Having more than 3 accounts will be considered a risk factor.
+* Avoidance of Discrimination: Occupation will not be considered a risk factor; the focus will be on other attributes.
+* Annual Income vs. Monthly Salary: Annual income divided by 12 will be used instead of monthly in-hand salary, primarily due to missing values in the monthly salary data. It's important to note that annual income does not provide the same detailed information as monthly in-hand salary.
+* Name: Names of individuals will not be relevant in the model; other attributes are sufficient to determine credit eligibility.
+* Interest Rate: Although relevant, this does not directly determine credit approval.
+* Month: The month of the credit request will be factored in.
+Missing Data that could have been useful:
+Amount of loan it was asked: This would have been highly relevant.
+
+Biggest trouble on the dataset:
+The same customer can make multiple requests, and each request may contain missing values. The approach we took was using mode imputation per customer so missing data can handled with proper knowledge of the user requests and not with assumptions.
+--- 
+## Data Preprocessing
+We first identify our data and consider our business rules (relevant data to determine if someone receives a credit). By default name, SSN, Customer ID, ID  features are discarded as IDs commonly contribute no relevant information.
+The data in this dataset has a signifcant number of inconsistencies. Typos, missing data all need to be handled with proper methods of mainly imputation and string manipulation to handle values which offer nothing to the analysis.
+### Handling missing data, outliers and data insconsistencies.
+Tasks Done:
+* Replacing 'NA' text values with NaN so they can be worked with appropiately.
+* Mode imputation on categorical features.
+* Regular expressions to handle typos on 'Age','Annual Income' feature. 
+* Monthly Inhand Salary and Annual Income have strong relationships, Monthly Inhand Salary has a lot of missing data so we took Annual Income and dropped Monthly Inhand Salary feature.
+* Converting Amount of Loans to numeric type
+* Replace Negative values in Number of Loans with NaN.
+* Remove non numeric characters in 'Delay from due Date' feature.
+* Convert 'Age' to numeric type.
+* Remove non numeric characters from 'Monthly Balance'.
+* Mode imputation per Customer for all missing data (sometimes data already in possesion was missing on other requests).
+* Removed 'Annual Income' outliers using IQR.
+* Removed 'Number of Bank Accounts' outliers using IQR.
+* Removed 'Number of Credit cards outliers' using IQR.
+* Removed 'Interest Rate' outliers using IQR.
+* Replace negative values on Number of Loans with NaN.
+* Removed Number of Loans outliers with IQR.
+* Credit History Age median imputation.
+* Removed outliers from Monthly Balance.
+---
+Data Relationship Visualization:
+Correlation Matrix on numeric data to find linear trends in data:
+
+![Correlation Matrix](./images/correlation_matrix.png "Correlation Matrix")
+
+
+
+---
 ## Installation
 You can run this machine learning models in two ways, via cloud or locally in your environment.
 
@@ -40,3 +119,4 @@ To run the Project locally, follow the steps below:
    streamlit run app.py
    ```
    After running this command Streamlit visual interface will open on browser and you can start making predictions.
+
