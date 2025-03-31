@@ -114,9 +114,17 @@ We use a p value of 0.05 as threshold, we will remove the following columns for 
 ## Model Training
 This is a classification model, as such we will use appropiate models compatible with the data:
 ### Logistic Regression
-**Hyperparameters**: 100 máximum iterations.
+**Hyperparameters**: 100 maximum iterations.
 **Logistic Regression Performance**
 ![Logistic Performance](./images/logistic_performance.png "Logistic Performance")
+
+Cross Validation Score
+![Logistic Cross Validation](./images/cross_logistic.png "Logistic Cross Validation")
+
+Confusion Matrix
+![Confusion Logistic Matrix](./images/logistic_matrix.png "Confusion Logistic Matrix")
+
+
 
 ## Installation
 You can run this machine learning models in two ways, via cloud or locally in your environment.
