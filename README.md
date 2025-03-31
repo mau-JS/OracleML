@@ -135,8 +135,16 @@ Cross Validation Score
 Confusion Matrix  
 ![Confusion KNN Matrix](./images/knn_matrix.png "Confusion KNN Matrix") 
 
-### Random Forest
+### Random Forest  
+**Hyperparameters**: n_estimators = 100  
+**K-NN Performance**  
+![Random Forest Performance](./images/rf_performance.png "Random Forest Performance")  
 
+Cross Validation Score  
+![Random Forest Cross Validation](./images/cross_rf.png "Random Forest Cross Validation")  
+
+Confusion Matrix  
+![Confusion Random Forest Matrix](./images/rf_matrix.png "Confusion Random Forest Matrix") 
 
 ## Installation
 You can run this machine learning models in two ways, via cloud or locally in your environment.
