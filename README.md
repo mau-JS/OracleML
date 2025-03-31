@@ -112,11 +112,11 @@ We use a p value of 0.05 as threshold, we will remove the following columns for 
 * The data has vastly different scales and units. As such, we need to apply an scaler to the data. We chose to use Standard Scaler.
 
 ## Model Training
-This is a classification model, as such we will use appropiate models compatible with them:
+This is a classification model, as such we will use appropiate models compatible with the data:
 ### Logistic Regression
 **Hyperparameters**: 100 máximum iterations.
 **Logistic Regression Performance**
-![](./images/logistic_performance.png")
+![Logistic Performance](./images/logistic_performance.png "Logistic Performance")
 
 ## Installation
 You can run this machine learning models in two ways, via cloud or locally in your environment.
