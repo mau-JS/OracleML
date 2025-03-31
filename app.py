@@ -48,3 +48,4 @@ if st.button("Predict"):
     scaled_inputs = scaler.transform(input_array)
     prediction = model.predict(scaled_inputs)[0]
     st.write(f"Predicted Result:   {prediction}")
+

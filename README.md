@@ -21,19 +21,22 @@ This project uses a dataset of 50,000 rows containing client dummy data to predi
 You can run this machine learning models in two ways, via cloud or locally in your environment.
 
 ## Cloud Deployment
-If you want to use the interactive web app you can go directly to the web application [Credit Application](https://maujs-ml.streamlit.app/).
+If you want to use the interactive web app you can go directly to the web application [Credit Application](https://maujs-ml.streamlit.app/) .
 If you want to instead run this project locally, follow the steps below:
 
 ## Local Installation
 To run the Project locally, follow the steps below:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/mau-JS/OracleML.git}
+   git clone https://github.com/mau-JS/OracleML.git
    cd OracleML
    ```
 2. Installing required dependencies:
   ```bash
     pip install -r requirements.txt
   ```
-
-   
+3. Running Streamlit application, open console and go again to OracleML folder:
+   ```bash
+   streamlit run app.py
+   ```
+   After running this command Streamlit visual interface will open on browser and you can start making predictions.
