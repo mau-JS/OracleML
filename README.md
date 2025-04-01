@@ -19,7 +19,7 @@ This project uses a dataset of 50,000 rows containing client dummy data to predi
 
 ## Data Exploration
 As always, we need to first understand our objectives and our data. This not only involves technical knowledge but also business knowledge. The dataset originally was composed by the following features:
-#### Categorical
+#### Categorical features
 * <span style="color:red">ID</span>
 * <span style="color:red">Customer_ID</span>
 * Month (Can be converted to number or kept like this)
@@ -32,7 +32,7 @@ As always, we need to first understand our objectives and our data. This not onl
 * Payment_of_min_amount
 
 
-### Discrete
+### Discrete features
 * Age
 * Num_Bank_Accounts
 * Interest Rate (Interest rate of loan)
@@ -41,7 +41,7 @@ As always, we need to first understand our objectives and our data. This not onl
 * Num_of_delayed_payment
 * Num_Credit_Card
 	
-### Continous
+### Continous features
 * Annual_Income
 * Monthly_Inhand Salary
 * Monthly_Balance
