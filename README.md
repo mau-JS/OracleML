@@ -16,7 +16,7 @@ This project uses a dataset of 50,000 rows containing client dummy data to predi
 - **Credit Mix**: A numerical score reflecting the diversity of the client’s credit portfolio.
 - **Credit History Age**: The duration (in years) of the client’s active credit history.
 - **Monthly Balance**: The client’s average monthly balance, which is closely tied to their Annual Income.
-
+---
 ## Data Exploration
 As always, we need to first understand our objectives and our data. This not only involves technical knowledge but also business knowledge. The dataset originally was composed by the following features:
 #### Categorical features
