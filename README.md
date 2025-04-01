@@ -159,7 +159,7 @@ You can run this machine learning models in two ways, via cloud or locally in yo
 If you want to use the interactive web app you can go directly to the web application [Credit Application](https://maujs-ml.streamlit.app/) .
 If you want to instead run this project locally, follow the steps below:
 
-## Local Installation
+## Local Installation instructions
 To run the Project locally, follow the steps below:
 1. Clone the repository:
    ```bash
